@@ -38,14 +38,6 @@
         e.preventDefault();
         $('#cap').click();
       });
-
-
-      const fileInput = document.getElementById('#cap');
-
-      fileInput.addEventListener('change', (e) => {
-        alert(e.target.files);
-        document.getElementById('photo').src = window.URL.createObjectURL(e.target.files[0])
-      });
     })
   </script>
 </head>
@@ -61,12 +53,13 @@
         <div class="one-half column">
           <h4 class="hero-heading">Pulse by Prudential</h4>
           <a class="button button-primary" id="take">Take Photo</a>
-          <input type="file" id="cap" name="personalPhoto" accept="image/*" capture="camera" id="camera"
-            style="display: none">
+
+          <input name="photo" type="file" accept="image/*" id="cap"
+            onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
         </div>
         <div class="row">
           <div class="one-half column category">
-            <img class="u-max-full-width" id="photo"
+            <img class="u-max-full-width" id="output"
               src="https://raw.githubusercontent.com/team-jird/jird/master/images/placeholder.png">
           </div>
         </div>
