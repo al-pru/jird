@@ -58,7 +58,7 @@
 /* Categories
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .categories {
-  background-image: url('../images/values-bg.jpg');
+  background-image: url('https://raw.githubusercontent.com/team-jird/jird/master/images/values-bg.jpg');
   background-size: cover;
   color: #fff;
 }
