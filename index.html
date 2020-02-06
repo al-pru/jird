@@ -38,6 +38,14 @@
         e.preventDefault();
         $('#cap').click();
       });
+
+
+      const fileInput = document.getElementById('#cap');
+
+      fileInput.addEventListener('change', (e) => {
+        alert(e.target.files);
+        document.getElementById('photo').src = window.URL.createObjectURL(e.target.files[0])
+      });
     })
   </script>
 </head>
@@ -55,6 +63,12 @@
           <a class="button button-primary" id="take">Take Photo</a>
           <input type="file" id="cap" name="personalPhoto" accept="image/*" capture="camera" id="camera"
             style="display: none">
+        </div>
+        <div class="row">
+          <div class="one-half column category">
+            <img class="u-max-full-width" id="photo"
+              src="https://raw.githubusercontent.com/team-jird/jird/master/images/placeholder.png">
+          </div>
         </div>
         <div class="one-half column phones">
           <img class="phone" src="https://raw.githubusercontent.com/team-jird/jird/master/images/iphone.png">
